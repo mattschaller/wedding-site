@@ -8,13 +8,13 @@ import theme from '@styles/theme';
 import GlobalStyles from '@styles/GlobalStyles';
 
 const Layout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <>
-      <SEO />
-      <GlobalStyles />
-      {children}
-    </>
-  </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <>
+        <SEO />
+        <GlobalStyles />
+        {children}
+      </>
+    </ThemeProvider>
 );
 
 Layout.propTypes = {

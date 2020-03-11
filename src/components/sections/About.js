@@ -68,36 +68,32 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
-        <Container>
-          <Grid>
-            <div>
-              <h2>The wedding</h2>
-              <p>
-              The ceremony will take place on the Argo Navis. [pic of Argo from website] We will be leaving the dock at 5:00pm and having a short ceremony and cocktail hour at sail.
-              </p>
-              <p>
-                Bight Marina 0, Margaret St, Key West, FL 33040
-              </p>
+      <Section className={`section`} id="about">
+        <Container className={`container`}>
+          <div class="columns">
+            <div class="column">
+              <h2 class="is-size-2">The wedding</h2>
+                <p>The ceremony will take place on the Argo Navis. [pic of Argo from website] We will be leaving the dock at 5:00pm and having a short ceremony and cocktail hour at sail.</p>
+                <p>Bight Marina 0, Margaret St, Key West, FL 33040</p>
             </div>
-            <Art>
-              <Img fluid={data.ceremony_argo.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-          <Grid inverse>
-            <Art>
-              <Img fluid={data.reception_firstflight.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>The reception</h2>
-              <p>
-                The reception will be held at the First Flight Island Restaurant and Brewery starting at 7:30. Join us upstairs in the Tree-Top Deck for dinner, drinks and dancing!
-              </p>
-              <p>
-                301 Whitehead St, Key West, FL 33040
-              </p>
+            <div class="column">
+              <Art>
+                <Img fluid={data.ceremony_argo.childImageSharp.fluid} />
+              </Art>
             </div>
-          </Grid>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <h2 class="is-size-2">The reception</h2>
+              <p>The reception will be held at the First Flight Island Restaurant and Brewery starting at 7:30. Join us upstairs in the Tree-Top Deck for dinner, drinks and dancing!</p>
+              <p>301 Whitehead St, Key West, FL 33040</p>
+            </div>
+            <div class="column">
+              <Art>
+                <Img fluid={data.reception_firstflight.childImageSharp.fluid} />
+              </Art>
+            </div>
+          </div>
         </Container>
       </Section>
     )}

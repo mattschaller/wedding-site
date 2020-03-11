@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 const SEO_DATA = {
   description: 'The wedding of Julia Smith & Matthew Schaller, occuring on June 6 2020 in Key West Florida.',
-  title: 'Julia & Matthew | Wedding',
+  title: 'Julia & Matthew\'s wedding',
   url: 'https://www.schallersmith.com',
   author: 'mattschaller',
   keywords: ['gatsby', 'site', 'wedding'],
@@ -35,6 +35,7 @@ const SEO = () => {
       <meta name="author" content={SEO_DATA.author} />
       <title>{SEO_DATA.title}</title>
       <html lang="en" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"></link>
     </Helmet>
   );
 };

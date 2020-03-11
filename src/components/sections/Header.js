@@ -23,40 +23,28 @@ const Header = () => (
       }
     `}
     render={data => (
-      <HeaderWrapper>
-        <Container>
-          <Grid>
-            <Art>
-              <Img fluid={data.hero_juliamatt.childImageSharp.fluid} />
-            </Art>
-            <Text>
-              <h1>
-              Julia and Matthew
-              <br/>
-              Key West, Florida
-              <br />
-              June 6, 2020
-              </h1>
-              <br />
-              <p>
-                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
-                  Find out more
-                </StyledExternalLink>
-              </p>
-            </Text>
-          </Grid>
-        </Container>
+      <HeaderWrapper className={`section hero is-medium`}>
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Julia & Matthew
+            </h1>
+            <h2 class="subtitle">June 6, 2020.</h2>
+            <h2 class="subtitle">Key West, Florida.</h2>
+            <StyledExternalLink href="#details">
+              Find out more
+            </StyledExternalLink>
+          </div>
+        </div>
       </HeaderWrapper>
     )}
   />
 );
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.section`
   background-color: ${props => props.theme.color.primary};
-  padding-top: 96px;
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    padding-top: 128px;
   }
 `;
 

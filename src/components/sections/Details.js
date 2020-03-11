@@ -68,36 +68,24 @@ const Details = () => (
       }
     `}
     render={data => (
-      <Section id="details" accent>
-        <Container>
-          <Grid>
-            <div>
-              <h2>Reservations and Parking</h2>
-              <p>
-                Although we do not have a room block for the wedding, we recommend checking both traditional hotels and AirBNB options for your stay in Key West. Many hotels offer parking for guests, but you may also be able to find free parking on the residential streets in central Key West. If you’re staying downtown near the wedding events, you should be able to walk or take the local trolley to all the local hot spots.
-              </p>
-              <p>
-                **Note – Key West is always a popular destination, so we encourage you to book your reservations as early as possible.
-              </p>
+      <Section className={`section`} id="details" accent>
+        <Container className={`container`}>
+          <div class="tile is-ancestor">
+            <div class="tile">
+              <div>
+                <h2 class="is-size-2">Reservations and Parking</h2>
+                <p>Although we do not have a room block for the wedding, we recommend checking both traditional hotels and AirBNB options for your stay in Key West. Many hotels offer parking for guests, but you may also be able to find free parking on the residential streets in central Key West. If you’re staying downtown near the wedding events, you should be able to walk or take the local trolley to all the local hot spots.</p>
+                <p>**Note – Key West is always a popular destination, so we encourage you to book your reservations as early as possible.</p>
+              </div>
             </div>
-            <Art>
-              <Img fluid={data.ceremony_argo.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-          <Grid inverse>
-            <Art>
-              <Img fluid={data.reception_firstflight.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Honeymoon/House fund</h2>
-              <p>
-                As we begin our lives together, we are especially grateful for support from our loved ones. We recognize how lucky we are to be blessed with the necessities of everyday life, and have decided to instead plan an unforgettable honeymoon to ______ to celebrate the beginning of our married life together. If you’d like to help us along on our next adventure you can contribute to our honeymoon fund below.
-              </p>
-              <p>
-                The biggest gift of all, however, is your presence on our Big Day. Thank you for your love, and we can’t wait to share our honeymoon adventures with you!
-              </p>
+            <div class="tile">
+              <div>
+                <h2 class="is-size-2">Honeymoon/House fund</h2>
+                <p>As we begin our lives together, we are especially grateful for support from our loved ones. We recognize how lucky we are to be blessed with the necessities of everyday life, and have decided to instead plan an unforgettable honeymoon to ______ to celebrate the beginning of our married life together. If you’d like to help us along on our next adventure you can contribute to our honeymoon fund below.</p>
+                <p>The biggest gift of all, however, is your presence on our Big Day. Thank you for your love, and we can’t wait to share our honeymoon adventures with you!</p>
+              </div>
             </div>
-          </Grid>
+          </div>
         </Container>
       </Section>
     )}

@@ -15,7 +15,7 @@ import {
 
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
 
-const NAV_ITEMS = ['About', 'Details', 'RSPV', 'FAQ'];
+const NAV_ITEMS = ['Wedding', 'Details', 'RSPV', 'FAQ'];
 
 class Navbar extends Component {
   state = {
@@ -33,24 +33,21 @@ class Navbar extends Component {
   };
 
   getNavAnchorLink = item => (
-    <AnchorLink href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
+    <AnchorLink className={`navbar-item`} href={`#${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
       {item}
     </AnchorLink>
   );
 
   getNavList = ({ mobile = false }) => (
-    <NavListWrapper mobile={mobile}>
       <Scrollspy
         items={NAV_ITEMS.map(item => item.toLowerCase())}
         currentClassName="active"
         mobile={mobile}
         offset={-64}
+        className={`navbar-end`}
       >
-        {NAV_ITEMS.map(navItem => (
-          <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
-        ))}
+        {NAV_ITEMS.map(navItem => (this.getNavAnchorLink(navItem)))}
       </Scrollspy>
-    </NavListWrapper>
   );
 
   render() {
@@ -58,23 +55,22 @@ class Navbar extends Component {
 
     return (
       <Nav {...this.props}>
-        <StyledContainer>
-          <Brand>Julia & Matthew</Brand>
-          <Mobile>
-            <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
-              <MenuIcon />
-            </button>
-          </Mobile>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <Brand>Julia & Matthew</Brand>
+            </a>
+            <a role="button" className={`navbar-burger burger ${mobileMenuOpen ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={this.toggleMobileMenu} >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
 
-          <Mobile hide>{this.getNavList({})}</Mobile>
-        </StyledContainer>
-        <Mobile>
-          {mobileMenuOpen && (
-            <MobileMenu>
-              <Container>{this.getNavList({ mobile: true })}</Container>
-            </MobileMenu>
-          )}
-        </Mobile>
+          <div id="navbarBasicExample" className={`navbar-menu ${mobileMenuOpen ? 'is-active' : ''}`} >
+            {this.getNavList({})}
+          </div>
+        </nav>
       </Nav>
     );
   }

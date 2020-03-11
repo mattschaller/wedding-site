@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import Form from '@common/Form';
+import Form from '@common/Form/Form';
 
 import { Section, Container } from '@components/global';
 
@@ -36,9 +36,9 @@ const Rspv = () => (
       }
     `}
     render={data => (
-      <Section id="rspv" accent="secondary">
-        <Container style={{ position: 'relative' }}>
-          <h1>RSPV</h1>
+      <Section className={`section`} id="rspv" accent="secondary">
+        <Container className={`container`}  style={{ position: 'relative' }}>
+            <h2 class="is-size-2">RSPV</h2>
           <Form />
         </Container>
       </Section>

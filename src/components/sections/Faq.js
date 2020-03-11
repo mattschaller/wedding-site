@@ -41,9 +41,9 @@ const FAQS = [
 ];
 
 const Faq = () => (
-  <Section id="faq">
-    <Container>
-      <h1 style={{ marginBottom: 40 }}>Frequently Asked Questions</h1>
+  <Section className={`section`} id="faq">
+    <Container className={`container`}>
+      <h2 class="is-size-2">Frequently Asked Questions</h2>
       <div>
         {FAQS.map(({ title, content }) => (
           <FaqItem title={title} key={title}>
